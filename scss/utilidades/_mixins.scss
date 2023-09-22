@@ -1,0 +1,25 @@
+//difinicion del mixin para el encabezado//
+@mixin estilo-encabezado {
+    text-align: center;
+    padding: 40px;
+    background-color: $color-fondo;
+    color: white;
+    font-weight: bolder;
+
+    h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 60px;
+        margin-bottom: 12px;
+        color: $color-textos-generales;
+        font-weight: bolder;
+        border: 1px solid rgba(137, 43, 226, 0.62);
+        padding: 10px;
+        display: inline-block;
+    }
+
+    h2 {
+        font-size: 40px;
+        color: $color-primario;
+    }
+}
+

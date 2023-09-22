@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/* Reset de estilos básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "barlow semi condensed";
+  background-color: black; }
+
+.encabezado {
+  text-align: center;
+  padding: 40px;
+  background-color: black;
+  color: white;
+  font-weight: bolder; }
+  .encabezado h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    margin-bottom: 12px;
+    color: whitesmoke;
+    font-weight: bolder;
+    border: 1px solid rgba(137, 43, 226, 0.62);
+    padding: 10px;
+    display: inline-block; }
+  .encabezado h2 {
+    font-size: 40px;
+    color: yellowgreen; }
+
+.contenedor-multimedia {
+  /* Estilos de caja de fotos o videos */
+  background-color: black;
+  display: flex;
+  justify-content: center; }
+
+.contenedor-texto {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px; }
+  .contenedor-texto .columna {
+    flex: 1;
+    margin: 0 20px;
+    text-align: left; }
+    .contenedor-texto .columna h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: yellowgreen; }
+    .contenedor-texto .columna p {
+      font-size: 16px;
+      color: whitesmoke; }
+
+.pie-pagina {
+  text-align: center;
+  padding: 10px;
+  background-color: blueviolet; }
+  .pie-pagina .caja-con-color {
+    padding: 20px;
+    text-align: center;
+    color: whitesmoke; }
+  .pie-pagina img {
+    width: 40px; }
+
+.estilo-imagenes-portada img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; }
+
+/* Grilla portada */
+main {
+  background-color: white;
+  padding: 0px;
+  /* Estilos para la grilla */ }
+  main .grilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Dos columnas: izquierda y derecha */
+    gap: 30px;
+    /* Espacio entre las columnas */
+    align-content: space-evenly;
+    /* Estilos para la columna izquierda */
+    /* Estilos para la columna derecha */ }
+    main .grilla .columna-izquierda {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      /* Tres filas del mismo tamaño */
+      gap: 30px;
+      /* Espacio entre las filas */
+      align-items: center;
+      /* Alinea las imágenes en la parte superior de la columna izquierda */
+      /* Estilos para las imágenes en la columna izquierda */ }
+      main .grilla .columna-izquierda img {
+        width: 100%;
+        /* Ocupa todo el ancho de su contenedor */
+        height: auto;
+        /* Mantiene la proporción de aspecto original de las imágenes */ }
+    main .grilla .columna-derecha {
+      align-self: stretch;
+      /* Hace que la columna derecha ocupe el alto completo de las tres imágenes de la izquierda */
+      /* Estilos para la imagen en la columna derecha */ }
+      main .grilla .columna-derecha img {
+        width: 100%;
+        /* Ocupa todo el ancho de su contenedor */
+        height: 100%;
+        /* Ocupa todo el alto de su contenedor (el alto de las tres imágenes de la izquierda) */ }
+
+/* Redes */
+/* Estilos para el contenido principal */
+main {
+  padding: 20px; }
+  main .redes-sociales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan en filas cuando no haya suficiente espacio */ }
+    main .redes-sociales a {
+      margin: 10px; }
+      main .redes-sociales a img {
+        width: 40px;
+        /* Ajusta el tamaño de las imágenes */
+        height: 40px;
+        /* Ajusta el tamaño de las imágenes */
+        /* Otros estilos personalizados para tus imágenes */ }
+
+/*estilos formulario de redes*/
+/*media query para dispositivos moviles*/
+@media (max-width: 767px) {
+  .contenedor-texto {
+    flex-direction: column; }
+  .columna {
+    margin: 0; } }
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  main .redes-sociales {
+    justify-content: flex-start;
+    /* Alinea los elementos a la izquierda */ } }

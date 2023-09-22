@@ -1,0 +1,162 @@
+/* Importar utilidades */
+@import "utilidades/variables";
+@import "utilidades/mixins";
+@import "utilidades/extend";
+
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "barlow semi condensed";
+    background-color: $color-fondo;
+}
+
+/* Estilo de Encabezado */
+.encabezado {
+    @include estilo-encabezado;
+}
+
+/* Contenedor Multimedia */
+.contenedor-multimedia {
+    background-color: $color-fondo;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor de Texto */
+.contenedor-texto {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    .columna {
+        flex: 1;
+        margin: 0 20px;
+        text-align: left;
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: $color-primario;
+        }
+
+        p {
+            font-size: 16px;
+            color: $color-textos-generales;
+        }
+    }
+}
+/* Estilo personalizado para el botón "Enviar" No consigo que funcione!*/
+.mi-boton-enviar {
+    background-color: $color-primario;
+    color: $color-textos-generales;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.mi-boton-enviar:hover {
+    background-color: $color-secundario; /* Cambia para el hover */
+}
+
+/* Pie de Página */
+.pie-pagina {
+    text-align: center;
+    padding: 10px;
+    background-color: $color-secundario;
+
+    .caja-con-color {
+        padding: 20px;
+        text-align: center;
+        color: $color-textos-generales;
+    }
+
+    img {
+        width: 40px;
+    }
+}
+
+/* Estilo Imágenes de Portada */
+.estilo-imagenes-portada img {
+    @extend .imagen-responsive;
+}
+
+/* Grilla Portada */
+main {
+    background-color: white;
+    padding: 0px;
+
+    .grilla {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-content: space-evenly;
+
+        .columna-izquierda {
+            display: grid;
+            grid-template-rows: repeat(3, auto);
+            gap: 30px;
+            align-items: center;
+
+            img {
+                @extend .imagen-responsive;
+            }
+        }
+
+        .columna-derecha {
+            align-self: stretch;
+
+            img {
+                @extend .imagen-responsive;
+            }
+        }
+    }
+}
+
+/* Redes Sociales */
+main {
+    padding: 20px;
+
+    .redes-sociales {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        a {
+            margin: 10px;
+
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+
+/* Media Queries */
+@media (max-width: 767px) {
+    .contenedor-texto {
+        flex-direction: column;
+    }
+
+    .columna {
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        .redes-sociales {
+            justify-content: flex-start;
+        }
+    }
+}
+
+
+
